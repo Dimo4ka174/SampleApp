@@ -11,16 +11,15 @@ const getBack = () => {
 const Home = ({id, go}) => {
     return <Panel id={id} centered="true">
                 <PanelHeader>
-                    Home
+                    Маршрутное такси
                 </PanelHeader>
                 <Placeholder
                     icon={<Icon56MoneyCircleFillBlue/>} 
                     header="Маршрутное такси">
-                        Оплачивайте проезд на маршрутном такси с помощью ВКонтакте, или принимайте платежи, будучи водителем
                 </Placeholder>
                 <ButtonGroup gap="m" align="center" mode="vertical" stretched="true">
-                        <Button onClick={go} data-to="passenger" size="m" stretched="true" before={<Icon24Qr />}>Оплатить по QR-коду</Button>
-                        <Button onClick={go} data-to="vendor" size="m" stretched="true" appearance='neutral' before={<Icon24CarOutline />}>Я Продавец</Button>
+                        <Button mode='outline' onClick={go} data-to="passenger" size="m" stretched="true" before={<Icon24Qr />}>Оплатить по QR-коду</Button>
+                        <Button mode='outline' onClick={go} data-to="vendor" size="m" stretched="true" before={<Icon24CarOutline />}>Я Продавец</Button>
                 </ButtonGroup>
             </Panel>
 };

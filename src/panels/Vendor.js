@@ -33,7 +33,7 @@ const Vendor = ({id, go, fetchedUser, setThisPanel, setQrCode}) => {
 
         const options = {};
         options.isShowLogo = true;
-        options.isShowBackground = false;
+        options.isShowBackground = true;
 
         setQrCode(qr.createQR(JSON.stringify({user: driverId, cost: parseInt(fare.current.value)}), 256, 'qr-code-class', options));
 
@@ -42,7 +42,7 @@ const Vendor = ({id, go, fetchedUser, setThisPanel, setQrCode}) => {
 
     return <Panel id={id} popout={snackbar}>
         <PanelHeader>
-            Vendor
+            Маршрутное такси
         </PanelHeader>
         <Fragment>
             <Group>
@@ -58,7 +58,7 @@ const Vendor = ({id, go, fetchedUser, setThisPanel, setQrCode}) => {
                             <Input stretched="true" getRef={fare} type="number"></Input>
                         </FormItem>
                         <FormItem stretched="true">
-                            <Button size="m" stretched="true" onClick={showQrCode} data-to='qrCode'>Сделать QR код</Button>
+                            <Button mode='outline' size="m" stretched="true" onClick={showQrCode} data-to='qrCode'>Сделать QR код</Button>
                         </FormItem>
                 </FormLayout>
             </Group>
