@@ -8,7 +8,7 @@ const WelcomePage = ({go, fetchedUser, seenWelcomePage}) => {
     <PanelHeader>
         Маршрутное такси
     </PanelHeader>
-    {(seenWelcomePage && fetchedUser) &&
+    {(!seenWelcomePage && fetchedUser) &&
             <Div className='Intro'>
                 <h2>Привет {fetchedUser.first_name}</h2>
                 <h3>Оплачивайте проезд на маршрутном такси с помощью ВКонтакте, или принимайте платежи, будучи водителем</h3>

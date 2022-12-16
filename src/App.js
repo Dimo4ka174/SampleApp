@@ -43,7 +43,7 @@ const App = () => {
 					switch(key){
 						case STORAGE_KEYS.STATUS:
 							if(data[key].hasSeenWelcomePage){
-								//setActivePanel("home");
+								setActivePanel("home");
 								setUserHasSeenWelcomePage(true);
 							}
 							break;
