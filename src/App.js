@@ -7,6 +7,10 @@ import Driver from './panels/Driver'
 import Passenger from './panels/Passenger'
 import { object } from 'prop-types';
 import WelcomePage from './panels/WelcomePage';
+import Vendor from './panels/Vendor';
+import QrCode from './panels/QrCode';
+
+import './panels/appStyle.css';
 
 
 const STORAGE_KEYS = {
@@ -20,6 +24,7 @@ const App = () => {
 	const [activePanel, setActivePanel] = useState('welcome_page');
 	const [fetchedUser, setUser] = useState(null);
 	const [userHasSeenWelcomePage, setUserHasSeenWelcomePage] = useState(false);
+	const [qrCode, setQrCode] = useState(null);
 
 	useEffect(() => {
 		bridge.subscribe(({ detail: { type, data }}) => {
@@ -59,6 +64,10 @@ const App = () => {
 		setActivePanel(e.currentTarget.dataset.to)
 	}
 
+	const setThisPanel = (id) =>{
+		setActivePanel(id);
+	}
+
 	const seenWelcomePage = async function(){
 		await bridge.send("VKWebAppStorageSet", {
 			key: STORAGE_KEYS.STATUS, 
@@ -78,8 +87,9 @@ const App = () => {
 						fetchedUser={fetchedUser} 
 						go={seenWelcomePage}/>
 						<Home id='home' go={go}/>
-						<Driver id='driver' go={go} fetchedUser={fetchedUser}/>
 						<Passenger id='passenger'/>
+						<Vendor id='vendor' go={go} setThisPanel={setThisPanel} fetchedUser={fetchedUser} setQrCode={setQrCode}></Vendor>
+						<QrCode id='qrCode' go={go} qrCode={qrCode}></QrCode>
 					</View>
 				</AppRoot>
 			</AdaptivityProvider>

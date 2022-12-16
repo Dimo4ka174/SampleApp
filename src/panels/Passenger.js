@@ -3,7 +3,7 @@ import bridge from '@vkontakte/vk-bridge';
 import { useState } from 'react';
 import { ScreenSpinner, Input, Snackbar, FormItem, SplitLayout, SplitCol, Placeholder, View, Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar, ButtonGroup, FormLayout, PopoutWrapper, ActionSheet } from '@vkontakte/vkui';
 
-const Passenger = () => {
+const Passenger = (id) => {
     const [qrResult, setQrResult] = useState(null);
     bridge.send('VKWebAppOpenCodeReader')
     .then((data) => { 
@@ -30,6 +30,6 @@ const Passenger = () => {
             .catch((error) => {
                 setQrResult("ERROR");
             });
-    return <Panel centered="true">{qrResult}</Panel>
+    return <Panel id={id} centered="true">{qrResult}</Panel>
 };
 export default Passenger;

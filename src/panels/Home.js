@@ -8,8 +8,8 @@ const getBack = () => {
     console.log('test')
 }
 
-const Home = ({go}) => {
-    return <Panel centered="true">
+const Home = ({id, go}) => {
+    return <Panel id={id} centered="true">
                 <PanelHeader>
                     Home
                 </PanelHeader>
@@ -20,7 +20,7 @@ const Home = ({go}) => {
                 </Placeholder>
                 <ButtonGroup gap="m" align="center" mode="vertical" stretched="true">
                         <Button onClick={go} data-to="passenger" size="m" stretched="true" before={<Icon24Qr />}>Оплатить по QR-коду</Button>
-                        <Button onClick={go} data-to="driver" size="m" stretched="true" appearance='neutral' before={<Icon24CarOutline />}>Я Водитель</Button>
+                        <Button onClick={go} data-to="vendor" size="m" stretched="true" appearance='neutral' before={<Icon24CarOutline />}>Я Продавец</Button>
                 </ButtonGroup>
             </Panel>
 };

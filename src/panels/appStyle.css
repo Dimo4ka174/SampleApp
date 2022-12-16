@@ -1,0 +1,10 @@
+.Intro{
+    padding: 20px;
+}
+
+.qrCodeBox{
+    display: flex;
+}
+.qrCode{
+    margin: auto;
+}

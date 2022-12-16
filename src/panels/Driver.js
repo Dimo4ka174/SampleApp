@@ -45,7 +45,6 @@ const Driver = (fetchedUser, props) => {
         options.isShowBackground = false;
         console.log();
         setQrCode(qr.createQR(JSON.stringify({user: driverId, cost: parseInt(fare.current.value)}), 256, 'qr-code-class', options));
-        setActivePanel('qr-code');
     }
 
     return <View style={{width: "100%"}} activePanel={activePanel} popout={snackbar}>

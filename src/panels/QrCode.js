@@ -1,14 +1,18 @@
 import React from 'react';
 import qr from '@vkontakte/vk-qr';
-import { Div } from '@vkontakte/vkui';
+import { CellButton, Div } from '@vkontakte/vkui';
 import { useState } from 'react';
+import { Panel, PanelHeader } from '@vkontakte/vkui';
 
-const QrCode = (svg) => {
-    let options = {};
-    options.isShowLogo = true;
-    options.isShowBackground = false;
+const QrCode = ({id, go, qrCode}) => {
 
-    return <Div id='qr-code' dangerouslySetInnerHTML={{__html: qr.createQR("TEXT", 256, 'qr-code-class', options)}}></Div>;
+    return <Panel id={id} className='qrCodeBox'>
+            <PanelHeader>
+                QR CODE
+            </PanelHeader>
+            <CellButton onClick={go} data-to='vendor'>Назад</CellButton>
+            <Div className='qrCode' dangerouslySetInnerHTML={{__html: qrCode}}></Div>
+        </Panel>
 }
 
 export default QrCode;
