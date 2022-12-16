@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import bridge from '@vkontakte/vk-bridge';
 import { useState } from 'react';
-import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar, ButtonGroup, FormLayout, FormItem, Input, PopoutWrapper, ActionSheet, CellButton, Snackbar } from '@vkontakte/vkui';
+import { Panel, FixedLayout, PanelHeader, Header, Button, Group, Cell, Div, Avatar, ButtonGroup, FormLayout, FormItem, Input, PopoutWrapper, ActionSheet, CellButton, Snackbar } from '@vkontakte/vkui';
 import { Icon16ErrorCircleFill } from '@vkontakte/icons';
 import qr from '@vkontakte/vk-qr';
 
@@ -44,11 +44,8 @@ const Vendor = ({id, go, fetchedUser, setThisPanel, setQrCode}) => {
         <PanelHeader>
             Маршрутное такси
         </PanelHeader>
-        <Fragment>
-            <Group>
-                <h2>Текст {fetchedUser.first_name}</h2>
-                <CellButton onClick={go} data-to='home'>Back to home page</CellButton>
-            </Group>
+        <Div className='vendor-main'>
+        <h3>Заполните поля чтобы создать qrCode</h3>
             <Group>
                 <FormLayout stretched="true">
                         <FormItem stretched="true" top="Укажите номер маршрута">
@@ -62,7 +59,13 @@ const Vendor = ({id, go, fetchedUser, setThisPanel, setQrCode}) => {
                         </FormItem>
                 </FormLayout>
             </Group>
-        </Fragment>
+            <FixedLayout vertical='bottom'>
+                <Div>
+                    <Button mode='outline' size='l' stretched='true' onClick={go} data-to='home'>Назад</Button>
+                </Div>
+            </FixedLayout>
+        </Div>
+                
     </Panel>
 }
 

@@ -9,7 +9,7 @@ const QrCode = ({id, go, qrCode}) => {
             <PanelHeader>
                 Маршрутное такси
             </PanelHeader>
-            <CellButton onClick={go} data-to='vendor'>Назад</CellButton>
+            <CellButton  onClick={go} data-to='vendor'>Назад</CellButton>
             <Div className='qrCode' dangerouslySetInnerHTML={{__html: qrCode}}></Div>
             <FixedLayout vertical='bottom'>
             <Div>
