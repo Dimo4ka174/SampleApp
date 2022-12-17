@@ -3,8 +3,6 @@ import bridge from '@vkontakte/vk-bridge';
 import { View, Panel, PanelHeader, ButtonGroup, Placeholder, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol, Button, Header } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 import Home from './panels/Home'
-import Driver from './panels/Driver'
-import Passenger from './panels/Passenger'
 import { object } from 'prop-types';
 import WelcomePage from './panels/WelcomePage';
 import Vendor from './panels/Vendor';
@@ -16,8 +14,6 @@ import './panels/appStyle.css';
 const STORAGE_KEYS = {
 	STATUS: 'status',
 }
-
-
 
 const App = () => {
 	const [scheme, setScheme] = useState('bright_light')
@@ -47,7 +43,7 @@ const App = () => {
 								setUserHasSeenWelcomePage(true);
 							}
 							break;
-						default: 
+						default:
 							break;
 					}
 				}
@@ -87,7 +83,6 @@ const App = () => {
 						fetchedUser={fetchedUser} 
 						go={seenWelcomePage}/>
 						<Home id='home' go={go}/>
-						<Passenger id='passenger'/>
 						<Vendor id='vendor' go={go} setThisPanel={setThisPanel} fetchedUser={fetchedUser} setQrCode={setQrCode}></Vendor>
 						<QrCode id='qrCode' go={go} qrCode={qrCode}></QrCode>
 					</View>
