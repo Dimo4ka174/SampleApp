@@ -12,7 +12,7 @@ const WelcomePage = ({go, fetchedUser, seenWelcomePage}) => {
                         <Icon56MoneyCircleFillBlue/>
                         <h3>Привет, {fetchedUser.first_name}!</h3>
                         <p className='home-main-panel__hint'>Оплачивайте проезд в маршрутном такси с помощью QR-кода не выходя ВКонтакте, или принимайте платежи с помощью смартфона, не приобретая дополнительного кассового оборудования</p>
-                    </Div>
+                    </Div>  
                     <FixedLayout vertical='bottom'>
                         <Div>
                             <Button size='l' stretched='true' onClick={go} data-to='home'>Вперёд!</Button>
