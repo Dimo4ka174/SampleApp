@@ -6,6 +6,12 @@
     flex-direction: column;
 }
 
+.intro-top_panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .home-action-sheet {
     width: 100%;
